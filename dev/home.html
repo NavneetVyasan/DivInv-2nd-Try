@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE HERE</title>
+    <link rel="stylesheet" href="../docs/homestyle.css"/>
+    <div class="headerborder">
+        <div>   
+        <h1 class="header">How well do you know your milk?</h1>
+        </div>
+    </div>
+
+</head>
+<body>
+<div class="header_image">
+    <img id="milk1" src="../docs/05fa3151-7fad-4c50-9630-23b8d9dc61a8.png">
+    <!-- <img id="milk2" src="../docs/15f3eb5b-7ea6-4be1-939e-33cea1be2ba7.png"> -->
+    <img id="milk3" src="../docs/7c17c943-a8fb-4726-a682-5119851fdd4b.png">
+</div>
+</body>
+
+    <div class="container">
+        <h1>Multiple Choice Questions</h1>
+        <form id="quizForm">
+            <div class="question">
+                <p>What do you think the average cost of a litre of oat milk is?</p>
+                <ul class="options">
+                    <li><input type="radio" id="£1.12" name="q1" value="£1.12"><label for="£1.12">£1.12</label></li>
+                    <li><input type="radio" id="£1.26" name="q1" value="£1.26"><label for="£1.26">£1.26</label></li>
+                    <li><input type="radio" id="£1.56" name="q1" value="£1.56"><label for="£1.56">£1.56</label></li>
+                    <li><input type="radio" id="£1.74" name="q1" value="£1.74"><label for="£1.74">£1.74</label></li>
+                </ul>
+            </div>
+            <div class="question">
+                <p>What do you think the average cost of a litre of cow's milk is?</p>
+                <ul class="options">
+                    <li><input type="radio" id="£1.11" name="q2" value="£1.11"><label for="£1.11">£1.11</label></li>
+                    <li><input type="radio" id="£1.24" name="q2" value="£1.24"><label for="£1.24">£1.24</label></li>
+                    <li><input type="radio" id="£1.55" name="q2" value="£1.55"><label for="£1.55">£1.55</label></li>
+                    <li><input type="radio" id="£1.75" name="q2" value="£1.75"><label for="£1.75">£1.75</label></li>
+                </ul>
+            </div>
+            
+        <input type="button" id="submitBtn" value="Submit">
+    </form>
+
+</body>
+
+    <div id="result1" class="result"></div>
+    <div id="result2" class="result"></div>
+    </div>
+
+    <script>
+    document.getElementById("submitBtn").addEventListener("click", function() {
+        var q1Answer = document.querySelector('input[name="q1"]:checked');
+        var q2Answer = document.querySelector('input[name="q2"]:checked');
+
+        if (q1Answer && q2Answer) {
+            if (q1Answer.value === "£1.74") {
+                document.getElementById("result1").innerHTML = "1. Correct!";
+                document.getElementById("result1").classList.add("correct");
+            } else {
+                document.getElementById("result1").innerHTML = "1. Incorrect!";
+                document.getElementById("result1").classList.add("incorrect");
+            }
+
+            if (q2Answer.value === "£1.11") {
+                document.getElementById("result2").innerHTML = "2. Correct!";
+                document.getElementById("result2").classList.add("correct");
+            } else {
+                document.getElementById("result2").innerHTML = "2. Incorrect!";
+                document.getElementById("result2").classList.add("incorrect");
+            }
+        } else {
+            alert("Please answer all questions before submitting.");
+        }
+    });
+    </script>
+
+
+    <!DOCTYPE html>
+
+<html>
+
+ 
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Analysing global milk and alternative consumption</title>
+
+    <meta name="description" content="Scrollama: Basic Example" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="../docs/style.css" />
+
+    <style>
+
+        #scrolly {
+
+            position: relative;
+
+        }
+
+ 
+
+        article {
+
+            position: relative;
+
+            padding: 0 1rem;
+
+            margin: 0 auto;
+
+            width: 33%;
+
+        }
+
+ 
+
+        .step {
+
+            margin: 2rem auto 4rem auto;
+
+            background-color: #3b3b3b;
+
+            color: #fff;
+
+        }
+
+ 
+
+        .step.is-active {
+
+            background-color: goldenrod;
+
+            color: #3b3b3b;
+
+        }
+
+ 
+
+        .step p {
+
+            text-align: center;
+
+            padding: 1rem;
+
+            font-size: 1.5rem;
+
+        }
+
+    </style>
+
+</head>
+
+ 
+
+<body>
+
+    <main>
+
+        <section id="intro">
+
+            <h1 class="intro__hed">Global share of alternative milk</h1>
+
+            <p class="intro__dek">
+
+                Start scrolling to see how it works.
+
+            </p>
+
+        </section>
+
+        <section id="scrolly">
+
+            <div id="sticky" class="sticky">
+                
+              </div>
+
+            <article>
+
+                <div class="step" data-step="1">
+
+                    <p>Rise in price of milk per unit share: <iframe title="Rise in milk substitute price" aria-label="Interactive line chart" id="datawrapper-chart-YHuSE" src=https://datawrapper.dwcdn.net/YHuSE/3/ scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="462" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+
+                    </script></p>
+
+                </div>
+
+                <div class="step" data-step="2">
+
+                    <p><iframe src='https://flo.uri.sh/visualisation/17685760/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/17685760/?utm_source=embed&utm_campaign=visualisation/17685760' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div></p>
+
+                </div>
+
+                <div class="step" data-step="3">
+
+                    <p>Oat farms and where are they located?: <iframe title="Where is your dairy milk made?" aria-label="Map" id="datawrapper-chart-85CGR" src=https://datawrapper.dwcdn.net/85CGR/2/ scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="620" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+
+                    </script></p>
+
+                </div>
+
+                <div class="step" data-step="4">
+
+                    <p><iframe src='https://flo.uri.sh/visualisation/17583954/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/17583954/?utm_source=embed&utm_campaign=visualisation/17583954' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div></p>
+
+                </div>
+
+            </article>
+
+        </section>
+
+        <section id="outro"></section>
+
+    </main>
+
+ 
+
+    <script src="../build/scrollama.js"></script>
+
+    <script>
+
+        var scrolly = document.querySelector("#scrolly");
+
+        var article = scrolly.querySelector("article");
+
+        var step = article.querySelectorAll(".step");
+
+ 
+
+        // initialize the scrollama
+
+        var scroller = scrollama();
+
+ 
+
+        // scrollama event handlers
+
+        function handleStepEnter(response) {
+
+            // response = { element, direction, index }
+
+            console.log(response);
+
+            // add to color to current step
+
+            response.element.classList.add("is-active");
+
+        }
+
+ 
+
+        function handleStepExit(response) {
+
+            // response = { element, direction, index }
+
+            console.log(response);
+
+            // remove color from current step
+
+            response.element.classList.remove("is-active");
+
+        }
+
+ 
+
+        function init() {
+
+            // set random padding for different step heights (not required)
+
+            step.forEach(function (step) {
+
+                var v = 100 + Math.floor((Math.random() * window.innerHeight) / 4);
+
+                step.style.padding = v + "px 0px";
+
+            });
+
+ 
+
+            // 1. setup the scroller with the bare-bones options
+
+            //      this will also initialize trigger observations
+
+            // 2. bind scrollama event handlers (this can be chained like below)
+
+            scroller
+
+                .setup({
+
+                    step: "#scrolly article .step",
+
+                    debug: false,
+
+                    offset: 0.5
+
+                })
+
+                .onStepEnter(handleStepEnter)
+
+                .onStepExit(handleStepExit);
+
+ 
+
+        }
+
+ 
+
+        // kick things off
+
+        init();
+
+    </script>
+
+</body>
+
+ 
+
+</html>
+
+    <body>
+
+    </body>
+    <div class="container">
+            <h1>Which factors are the most important to you?</h1>
+            <div class="quiz-item">
+                <label><input type="radio" name="factor" value="environmentally friendly"> Environmentally friendly</label>
+            </div>
+            <div class="quiz-item">
+                <label><input type="radio" name="factor" value="ethical"> Ethically produced</label>
+            </div>
+            <div class="quiz-item">
+                <label><input type="radio" name="factor" value="low calorie/fat"> Low calorie/fat</label>
+            </div>
+            <div class="quiz-item">
+                <label><input type="radio" name="factor" value="high nutritional value"> High nutritional value</label>
+            </div>
+            <div class="quiz-item">
+                <label><input type="radio" name="factor" value="minimal additives"> Minimal additives</label>
+            </div>
+            <div class="quiz-item">
+                <label><input type="radio" name="factor" value="less expensive"> Less expensive</label>
+            </div>
+            <div id="result"></div>
+    </div>
+    
+        <script>
+            const resultDiv = document.getElementById('result');
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
+    
+            radioButtons.forEach(radioButton => {
+                radioButton.addEventListener('change', () => {
+                    const selectedFactor = document.querySelector('input[name="factor"]:checked').value;
+                    let resultText = '';
+    
+                    switch (selectedFactor) {
+                        case 'environmentally friendly':
+                            resultText = 'Consider choosing foods with minimal packaging and those produced using sustainable practices.';
+                            break;
+                        case 'ethical':
+                            resultText = 'Look for products with certifications like Fair Trade, which ensure fair treatment of workers.';
+                            break;
+                        case 'low calorie/fat':
+                            resultText = 'Prioritize foods high in nutrients like fruits, vegetables, lean proteins, and whole grains.';
+                            break;
+                        case 'high nutritional value':
+                            resultText = 'Prioritize foods high in nutrients like fruits, vegetables, lean proteins, and whole grains.';
+                            break;
+                        case 'minimal additives':
+                            resultText = 'Prioritize foods high in nutrients like fruits, vegetables, lean proteins, and whole grains.';
+                            break;
+                        case 'less expensive':
+                            resultText = 'Prioritize foods high in nutrients like fruits, vegetables, lean proteins, and whole grains.';
+                            break;
+                        default:
+                            resultText = 'Please select a factor.';
+                            break;
+                    }
+    
+                    resultDiv.textContent = resultText;
+                });
+            });
+        </script>
+
+</html>  
