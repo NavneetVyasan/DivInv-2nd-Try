@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrollytelling Page</title>
+  <style>
+    h1{
+        background-color: white;
+        margin-left: 25%;
+        margin-right: 20%;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('../docs/kim-gorga-p3ViLmVgVJ4-unsplash.jpg'); /* Replace 'background-image.jpg' with the path to your image */
+      background-size: 90px;
+      background-position: center;
+      background-repeat: repeat;
+    }
+    section {
+      /* height: 5vh;
+      overflow-y: scroll;*/
+      scroll-snap-type: y mandatory;
+      padding: 20px;
+      margin-left: 5%;
+      width: 500px;
+    }
+    p {
+      margin-bottom: 20px;
+    }
+    .scrolly-element{
+        background-color: aliceblue;#
+        margin-bottom: 10px;
+        margin-top: 20px
+    }
+  </style>
+</head>
+
+<body>
+    <h1 class="title">To milk or not to milk</h1>
+  <section class="scrolly-element">
+    <p>We inspected how the global milk market has transformed - retail sales data from Nielson IQ covering 13 European countries showed plant-based milk receiving a higher turnover in the UK between 2021 and 2022 at £2.2 billion, compared to cow’s milk at just £276.2 million over the same period.</p>
+  </section>
+  <section class="scrolly-element">
+    <p>The UK has the second-highest plant-based food sales within the region and ranks fifth in plant-based food spent per capita. A 2022 Statista survey discovered consumers in the United Kingdom are most likely to include almond milk as their milk of choice but a sizeable portion of respondents still indicated a propensity towards animal-based milk. This conforms to the steady upward trend in global cow milk production rom 2015 to 2023, currently standing at approximately 550 million metric tons, with the UK being the eighth largest producer at 15 million metric tons (36.6% of the global market share).</p>
+  </section>
+  <section class="scrolly-element">
+    <p>However, plant-based milk alternatives are also seeing a steady growth - according to Waitrose, 2018 was the year of the 'rise of meat free', with plant-based milk alternatives such as oat, coconut and almond taking supermarket shelves up 116%, 60% and 26% respectively that year.</p>
+  </section>
+  <section class="scrolly-element">
+    <p>UK, being the world's fifth biggest market for dairy alternatives, producers across Britain are heading towards diversification. Mintel, a market research company, found that 32 per cent of those polled now drink milk made from either soy, oats, almond or rice – up from 25 per cent in 2020.* (insert hyperlink to article) The Independent)</p>
+  </section>
+  <section class="scrolly-element">
+    <p>After running a sentiment analysis over 199 reviews across 21 milk alternatives in Amazon, we have discovered 113 customers returning positive feedback. We also ran a similar experiment, rendering a similar result with 121 reviews being positive, indicating satisfaction.</p>
+  </section>
+  <section class="scrolly-element">
+    <p>What’s happening with subsidies etc. for farming? - speak to farmers’ market people Farmers have been out protesting once again, against the low price they get for milk. Last night several dairies were blockaded including the Muller Wiseman plant in Market Drayton - although turnout was noticeably down on previous demonstrations. One farmer has told us the price he's being offered for his milk is now so low, he doesn't know how he will manage to feed his cows.Neale Sadler cost 28 pence but forced to sell at 23p/litre. UK farmers state there will be further French-style blockades // low supermarket prices and cheap food imports from post-Brexit trade deals.</p>
+  </section>
+  <section class="scrolly-element">
+    <p>British producers of plant-based milk are set to double their revenue by 2028 *quote source here: mordorintelligence* , [HOW DOES THIS COMPARE TO DAIRY REVENUE?] and Waitrose have doubled the volume of oat milk they sell. The UK is now the fifth biggest market in the world for diary alternatives (or second in Europe).</p>
+  </section>
+  <section class="scrolly-element">
+    <p>As the popularity of oat milk soars, so does its price. The reason for this rise in consumption can be traced to a few concerns. Of them, the three major reasons are linked to climate change, health, and concerns over the treatment of animals.</p>
+  </section>
+  <section class="scrolly-element">
+    <p>Are ethical reasons enough to turn a consumer towards plant-based milk? People for ethical Treatment of Animals (PETA), an NGO, thinks so. The organization claims that at least 4 per cent of the world’s total greenhouse gas emissions can be traced back to dairy farming. Environment Agency, an executive non-departmental public body, sponsored by Department for Environment, Food & Rural Affairs, in their 2022 report, said 95% of dairy farms in the UK failed to meet water protection standards. This resulted in nearby rivers getting polluted.</p>
+  </section>
+  <section class="scrolly-element">
+    <p>The United Kingdom ranked fifth in the list of worldwide milk substitute revenue in 2022. The UK market, which is pegged at $540 Million is set to double by 2028. So, what about the quality and taste? Does that matter? In our investigation, we invited some people for a milk taste test, the taste did matter - insert findings here</p>
+  </section>
+  <section class="scrolly-element">
+    <p>The UK, in 2022, was the fifth biggest market in the world for diary alternatives and producers across Britain are diversifying and replacing a lot of their milk production with dairy substitute production. 
+        *The research, carried out by Mintel, found that 32 per cent of those polled now drink milk made from either soy, oats, almond or rice – up from 25 per cent in 2020.* (The Independent) 
+        </p>
+    </section>
+    <section class="scrolly-element">
+    <p>Placeholder to put popping fridge door to <a href="../dev/home.html">link</a> to interaction with readers</p>
+  </section>
+  <!-- Add more sections for additional paragraphs -->
+  
+  <script>
+    const sections = document.querySelectorAll('section');
+
+    let lastScrollTime = 0;
+    let ticking = false;
+
+    // document.getElementsByClass('scrolly-element').scrollIntoView({
+    //         behavior: 'auto',
+    //         block: 'center',
+    //         inline: 'center'
+    //     });
+
+    function smoothScrollTo(element, duration) {
+      const start = window.pageYOffset;
+      const end = element.offsetTop;
+      const distance = end - start;
+      const startTime = performance.now();
+
+      function scrollAnimation(currentTime) {
+        const elapsedTime = currentTime - startTime;
+        const scrollProgress = Math.min(elapsedTime / duration, 1);
+        const easeScroll = easeInOut(scrollProgress);
+        window.scrollTo(0, start + distance * easeScroll);
+
+        if (scrollProgress < 1) {
+          requestAnimationFrame(scrollAnimation);
+        }
+      }
+
+      function easeInOut(t) {
+        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      }
+
+      requestAnimationFrame(scrollAnimation);
+    }
+
+    function handleScroll(event) {
+      const currentTime = new Date().getTime();
+      const scrollDirection = event.deltaY > 0 ? 'down' : 'up';
+
+      if (!ticking) {
+        if (currentTime - lastScrollTime > 1000) {
+          sections.forEach(section => {
+            if (scrollDirection === 'down' && section.getBoundingClientRect().top <= window.innerHeight / 2 && section.nextElementSibling) {
+              smoothScrollTo(section.nextElementSibling, 800);
+            } else if (scrollDirection === 'up' && section.previousElementSibling && section.getBoundingClientRect().top >= window.innerHeight / 2) {
+              smoothScrollTo(section.previousElementSibling, 800);
+            }
+          });
+          lastScrollTime = currentTime;
+        }
+        ticking = true;
+      }
+
+      setTimeout(() => {
+        ticking = false;
+      }, 1000);
+    }
+
+    window.addEventListener('wheel', handleScroll);
+  </script>
+</body>
+</html>
